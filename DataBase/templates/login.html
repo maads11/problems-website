@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+<h1>{% block title %}Login{% endblock %}</h1>
+
+{% block right %}
+        <form class="form" method="POST" action="{{ url_for('login') }}">
+        {{ form.csrf_token }}
+        <div class="title">Welcome</div>
+        <div class="subtitle">Let's login to your account!</div>
+        <div class="input-container ic1">
+            {{ form.username(class="input", id="username") }}
+            <div class="cut"></div>
+            {{ form.username.label(class="placeholder") }}
+        </div>
+        <div class="input-container ic2">
+            {{ form.password(class="input", id="password") }}
+            <div class="cut"></div>
+            {{ form.password.label(class="placeholder") }}
+        </div>
+        {{ form.submit(class="submit") }} 
+        {% if error_message %}
+            <div style='color:red' class="error">{{ error_message }}</div>
+        {% endif %}
+    </form>
+
+{% endblock %}
