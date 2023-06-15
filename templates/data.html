@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block left%}
+    <div class='container'>
+        <div class='item'>
+            <button value='Problems' id='check-database'> Problems
+        </div>
+        <div class='item'><button value='Problems' id='add-to-database'> Add problem</div>
+    </div>            
+{% endblock %}  
+
+
+
+{% block right %}
+<table>
+    <thead>
+        <tr>
+          <th>ID
+          <th>Problem
+          <th>Description
+          <th>Time
+      </thead>
+      <tbody>
+        {% for problem in problems %}
+              <tr>
+                <td>{{problem.id}}
+                <td>{{problem.problem}}
+                <td>{{problem.description}}
+                <td>{{problem.time}}
+        {% endfor %}
+    </tbody>
+</table>   
+{% endblock %}
