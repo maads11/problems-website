@@ -8,7 +8,7 @@ from functools import wraps
 
 
 
-
+male_meno = 'hellooooo'
 
 
 
